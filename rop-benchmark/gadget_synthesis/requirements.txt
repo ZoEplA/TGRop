@@ -1,0 +1,17 @@
+# install SMT solvers
+-r ./lib/solvers/requirements.txt
+-e ./lib/solvers
+
+# install submodule miasm
+# Due to breaking changes in pyparsing (2.x -> 3.x)
+# we manually pin Miasm's dependencies
+future==0.18.2
+pyparsing==2.0
+# -r ./lib/miasm/requirements.txt
+-e ./lib/miasm/
+
+# other dependencies
+z3-solver==4.8.10
+multiprocessing-logging==0.3.1
+msgpack==1.0.2
+

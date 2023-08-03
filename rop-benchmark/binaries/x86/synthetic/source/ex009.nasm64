@@ -1,0 +1,38 @@
+;bad LoadConst multiple with overlapping
+
+bits 64
+
+SECTION .gadgets.text
+
+gadgets:
+
+.LoadConstGM:
+POP RBX
+MOV RAX, RBX
+MOV RCX, RBX
+POP RDX
+MOV RBP, RDX
+RET
+
+.LoadConstG2:
+POP RDI
+POP RSI
+POP RDX
+POP RAX
+RET
+
+.StoreMemG1:
+MOV QWORD [RAX], RBX
+RET
+
+.StoreMemG2:
+MOV WORD [RDI], SI
+RET
+
+; rax (rdi, rsi, rdx)
+.SyscallG:
+SYSCALL
+
+.NoOp:
+RET
+RET

@@ -1,0 +1,9 @@
+bits 64
+
+SECTION .gadgets.text
+
+gadgets:
+
+.NoOP:
+RET
+RET

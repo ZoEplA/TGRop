@@ -1,0 +1,23 @@
+2023-05-22 00:23:32,925 - synthesizer              | MainProcess       - INFO    : Starting initial extraction and disassembly
+2023-05-22 00:23:32,925 - synthesizer              | MainProcess       - DEBUG   : Using up to 1 processes
+2023-05-22 00:23:32,925 - synthesizer.config       | MainProcess       - DEBUG   : Loading SynthesizerConfig from 'synthesizer_config_default.json'
+2023-05-22 00:23:32,925 - synthesizer              | MainProcess       - INFO    : Processing libutil
+2023-05-22 00:23:32,925 - synthesizer              | MainProcess       - DEBUG   : Using configuration at /ssd/home/rop/eqqie_test/gadget_synthesis/targets/libutil/config_execve.json
+2023-05-22 00:23:32,925 - synthesizer.config       | MainProcess       - DEBUG   : Loading TargetConfig from '/ssd/home/rop/eqqie_test/gadget_synthesis/targets/libutil/config_execve.json'
+2023-05-22 00:23:32,926 - synthesizer.config       | MainProcess       - DEBUG   : Executable is relative path: 'libutil.so.12.2.bin' - adjusting to '/ssd/home/rop/eqqie_test/gadget_synthesis/targets/libutil/libutil.so.12.2.bin'
+2023-05-22 00:23:32,926 - synthesizer.config       | MainProcess       - DEBUG   : Using 0 free variables, 2 preconditions, 4 postconditions, and 0 ptr_postconditions
+2023-05-22 00:23:32,926 - synthesizer              | MainProcess       - DEBUG   : Disassembly settings used: target_name=libutil.so.12.2.bin, target=/ssd/home/rop/eqqie_test/gadget_synthesis/targets/libutil/libutil.so.12.2.bin, workdir=targets/pppd/gadgets/libutil, disas_unaligned=False, control_flow_types=['ret', 'call', 'jmp'], max_processes=1, timeout=7200, cache_name=gadgets, cache_type=JSON
+2023-05-22 00:23:32,926 - synthesizer              | MainProcess       - DEBUG   : Preparing libutil
+2023-05-22 00:23:32,926 - synthesizer              | MainProcess       - DEBUG   : Ensure function addresses are cached for libutil
+2023-05-22 00:23:32,926 - synthesizer.disasm       | MainProcess       - DEBUG   : Extracting function addresses from 'libutil.so.12.2.bin'
+2023-05-22 00:23:32,926 - synthesizer.cache        | MainProcess       - DEBUG   : Cache intialized (function_addrs.json)
+2023-05-22 00:23:32,926 - synthesizer.cache        | MainProcess       - DEBUG   : Metadata is at /ssd/home/rop/eqqie_test/gadget_synthesis/targets/libutil/.cache/.metadata
+2023-05-22 00:23:32,927 - synthesizer.disasm       | MainProcess       - DEBUG   : Returning 45 cached function addresses
+2023-05-22 00:23:32,927 - synthesizer              | MainProcess       - DEBUG   : Ensure valid gadgets are cached for libutil
+2023-05-22 00:23:32,927 - synthesizer.disasm       | MainProcess       - DEBUG   : Caching gadgets for libutil.so.12.2.bin
+2023-05-22 00:23:32,927 - synthesizer.cache        | MainProcess       - DEBUG   : Cache intialized (gadgets.json)
+2023-05-22 00:23:32,927 - synthesizer.cache        | MainProcess       - DEBUG   : Metadata is at /ssd/home/rop/eqqie_test/gadget_synthesis/targets/libutil/.cache/.metadata
+2023-05-22 00:23:32,927 - synthesizer.disasm       | MainProcess       - DEBUG   : Gadget addresses already cached
+2023-05-22 00:23:32,927 - synthesizer              | MainProcess       - DEBUG   : Found 6 configurations
+2023-05-22 00:23:32,928 - synthesizer              | MainProcess       - INFO    : Processed libutil in 0.0s
+2023-05-22 00:23:32,928 - synthesizer              | MainProcess       - INFO    : Done in 0.0s

@@ -1,0 +1,21 @@
+{
+    "executable": "./pppd.bin",
+    "arch": "x86_64",
+    "load_address" : "0x000000",
+    "libraries": [],
+    "force_code_locations": [],
+    "preconditions": [
+                      ["IRDst", "0x4028f6", 64],
+                      ["RSP", "0x7fffffffd048", 64]
+                    ],
+    "postconditions": [
+                      ["IRDst", "0x41373a", 64],
+                      ["RAX",  "0x3b", 64],
+                      ["RSI",  "0x0", 64],
+                      ["RDX",  "0x0", 64]
+                  ],
+    "read_mem_areas": [["0x400000", "0x4b1000"]],
+    "write_mem_areas": [["0x7ffffffde000", "0x7ffffffff000"], ["0x4ae0e0", "0x4ae0f0"]]
+  }
+  
+  

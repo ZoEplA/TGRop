@@ -1,0 +1,2 @@
+python3 extractor.py -c config_execve.json targets/libutil -o targets/pppd/gadgets
+rm -rf targets/pppd/out && python3 synthesizer.py -v -j 16 -c config_execve.json targets/pppd -o targets/pppd/out

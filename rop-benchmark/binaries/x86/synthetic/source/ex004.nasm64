@@ -1,0 +1,43 @@
+;set reg with arithmetic add with init const
+
+bits 64
+
+SECTION .gadgets.text
+
+gadgets:
+
+.LoadConstG1:
+POP RDI
+RET
+
+.LoadConstG2:
+POP RSI
+RET
+
+.LoadConstG3:
+POP RDX
+RET
+
+.LoadConstG4:
+POP RBP
+RET
+
+.StoreMemG:
+MOV QWORD [RDI], RBP
+RET
+
+.InitConstG:
+XOR RAX, RAX
+RET
+
+.ArithmeticG1:
+ADD RAX, RBP
+RET
+
+; rax (rdi, rsi, rdx)
+.SyscallG:
+SYSCALL
+
+.NoOP:
+RET
+RET
