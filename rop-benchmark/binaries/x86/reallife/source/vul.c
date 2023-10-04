@@ -31,68 +31,52 @@ void sys(char *s) {
 
 void check_argv(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14) {
   int regs_set_count = 0;
-  int buf[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   int j;
   char out[20];
 
   if(a0 == 0x100001){
-    buf[regs_set_count] = 1;
     regs_set_count = regs_set_count + 1;
   }
   if(a1 == 0x100002){
-    buf[regs_set_count] = 2;
     regs_set_count = regs_set_count + 1;
   }
   if(a2 == 0x100003){
-    buf[regs_set_count] = 3;
     regs_set_count = regs_set_count + 1;
   }
   if(a3 == 0x100004){
-    buf[regs_set_count] = 4;
     regs_set_count = regs_set_count + 1;
   }
   if(a4 == 0x100005){
-    buf[regs_set_count] = 5;
     regs_set_count = regs_set_count + 1;
   }
   if(a5 == 0x100006){
-    buf[regs_set_count] = 6;
     regs_set_count = regs_set_count + 1;
   }
   if(a6 == 0x100007){
-    buf[regs_set_count] = 7;
     regs_set_count = regs_set_count + 1;
   }
   if(a7 == 0x100008){
-    buf[regs_set_count] = 8;
     regs_set_count = regs_set_count + 1;
   }
   if(a8 == 0x100009){
-    buf[regs_set_count] = 9;
     regs_set_count = regs_set_count + 1;
   }
   if(a9 == 0x10000a){
-    buf[regs_set_count] = 0xa;
     regs_set_count = regs_set_count + 1;
   }
   if(a10 == 0x10000b){
-    buf[regs_set_count] = 0xb;
     regs_set_count = regs_set_count + 1;
   }
   if(a11 == 0x10000c){
-    buf[regs_set_count] = 0xc;
     regs_set_count = regs_set_count + 1;
   }
   if(a12 == 0x10000d){
-    buf[regs_set_count] = 0xd;
     regs_set_count = regs_set_count + 1;
   }
   if(a13 == 0x10000e){
-    buf[regs_set_count] = 0xe;
     regs_set_count = regs_set_count + 1;
   }
   if(a14 == 0x10000f){
-    buf[regs_set_count] = 0xf;
     regs_set_count = regs_set_count + 1;
   }
   if(regs_set_count == 0)
