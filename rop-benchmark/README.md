@@ -46,7 +46,33 @@ python3 /xxxxxx/TGRop/rop-benchmark/angrop/angrop_runner.py binaries/x86/reallif
 
 3. If you want this framework to have more functionalities, check out `run.py` and the three key scripts in each tool directory (`angrop_runner.py`, `angrop_tool.py`, `job_execve.pt`) as well as the specific implementations in `roptest`.
 
+# About DataSet
 
+The following programs were not uploaded due to exceeding 50MB in size, though partial programs can be found [here](https://github.com/ZoEplA/roptest-benchmark). The `newbsd.gdb.bin` program failed to upload as it exceeds 100MB.
+
+```
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/cc.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/clang++.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/clang-cpp.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/clang.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/cpp.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/ld.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/ld.lld.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/libLLVM.so.7.0.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/libOSMesa.so.13.0.bin
+        rop-benchmark/binaries/x86/reallife/orig/openbsd-73/newbsd.gdb.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/c++.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/cc.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/clang++.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/clang-cpp.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/clang.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/cpp.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/ld.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/ld.lld.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/libLLVM.so.7.0.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/libOSMesa.so.13.0.bin
+        rop-benchmark/binaries/x86/reallife/vuln/openbsd-73/newbsd.gdb.bin
+```
 
 # Reference
 
